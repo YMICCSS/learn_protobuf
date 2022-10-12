@@ -1,0 +1,22 @@
+syntax = "proto3";
+option go_package = "./goodService";
+// 每一行都要加分號
+// 定義RPC服務
+service goodsService{
+    rpc AddGoods(AddGoodsReq) returns(AddGoodsRes);
+}
+
+message AddGoodsReq{
+    string title = 1;
+    double price = 2;
+    string content = 3;
+}
+
+message AddGoodsRes{
+    string messqge = 1;
+    bool success = 2;
+}
+
+// 編譯命令 protoc --go_out=./ *proto
+
+
